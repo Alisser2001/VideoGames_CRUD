@@ -4,14 +4,38 @@
  */
 package CRUD;
 
+import SQL.SQLModels;
+import SQL.SQLRelations;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 /**
  *
  * @author Alisser
  */
 public class Boot {
     public static void main(String[] args){
-        Add windowAdd = new Add();
+        //Create Models
+        /*SQLModels objModels = new SQLModels();
+        objModels.CreateGamesModel();
+        objModels.CreateGenresModel();
+        objModels.CreatePlatformsModel();
+        objModels.CreateStoresModel();
+        objModels.CreateTagsModel();*/
+        
+        //Create Relations
+        /*SQLRelations objRel = new SQLRelations();
+        objRel.GamesAndGenres();
+        objRel.GamesAndPlatforms();
+        objRel.GamesAndStores();
+        objRel.GamesAndTags();*/
+        
+        //Get Info API
+        API api = new API();
+        JSONArray infoAPI = api.InfoAPI();
+        System.out.println(infoAPI);
+        /*Add windowAdd = new Add();
         windowAdd.setVisible(true);
-        windowAdd.setLocationRelativeTo(null);
+        windowAdd.setLocationRelativeTo(null);*/
     }
 }
