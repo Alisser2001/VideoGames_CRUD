@@ -6,8 +6,6 @@ package CRUD;
 
 import SQL.SQLModels;
 import SQL.SQLRelations;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 /**
  *
@@ -16,24 +14,28 @@ import org.json.JSONObject;
 public class Boot {
     public static void main(String[] args){
         //Create Models
-        /*SQLModels objModels = new SQLModels();
+        SQLModels objModels = new SQLModels();
         objModels.CreateGamesModel();
         objModels.CreateGenresModel();
         objModels.CreatePlatformsModel();
         objModels.CreateStoresModel();
-        objModels.CreateTagsModel();*/
+        objModels.CreateTagsModel();
         
         //Create Relations
-        /*SQLRelations objRel = new SQLRelations();
+        SQLRelations objRel = new SQLRelations();
         objRel.GamesAndGenres();
         objRel.GamesAndPlatforms();
         objRel.GamesAndStores();
-        objRel.GamesAndTags();*/
+        objRel.GamesAndTags();
         
-        //Get Info API
-        API api = new API();
-        JSONArray infoAPI = api.InfoAPI();
-        System.out.println(infoAPI);
+        //Updated Games Info
+        InfoAPI info = new InfoAPI();
+        info.InfoGameToDB();
+        info.InfoGenresToDB();
+        info.InfoPlatformsToDB();
+        info.InfoStoresToDB();
+        info.InfoTagsToDB();
+        
         /*Add windowAdd = new Add();
         windowAdd.setVisible(true);
         windowAdd.setLocationRelativeTo(null);*/
