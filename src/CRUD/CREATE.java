@@ -2,27 +2,27 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package SQL;
+package CRUD;
 
 /**
  *
  * @author Alisser
  */
 
-import static java.lang.Integer.parseInt;
+import SQL.SQLConection;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
 
-public class SQL_CRUD {
+public class CREATE {
     SQLConection conn = new SQLConection();
     
-    public void InsertGames(int id, String name, String slug, String img, int rating){
+    public void Games(String name, String slug, String img, int rating){
         try{
             //Direct Connect with the DB
             Connection conect = conn.Conect();
             //Objeto que nos permitirá crear sentencias SQL
             java.sql.Statement st = conect.createStatement();
-            String sql = "insert into games(id, name, slug, img, rating) values('"+id+"', '"+name+"', '"+slug+"', '"+img+"', '"+rating+"')";
+            String sql = "insert into games(name, slug, img, rating) values('"+name+"', '"+slug+"', '"+img+"', '"+rating+"');";
             //Envia la sentencia sql a la DB
             st.execute(sql);
             st.close();
@@ -31,13 +31,13 @@ public class SQL_CRUD {
             JOptionPane.showMessageDialog(null, "Error al guardar el registro" + e, "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-    public void InsertGenres(int id, String name, String slug,int numGames, String img){
+    public void Genres(String name, String slug,int numGames, String img){
         try{
             //Direct Connect with the DB
             Connection conect = conn.Conect();
             //Objeto que nos permitirá crear sentencias SQL
             java.sql.Statement st = conect.createStatement();
-            String sql = "insert into genres(id, name, slug, numgames, img) values('"+id+"', '"+name+"', '"+slug+"', '"+numGames+"', '"+img+"')";
+            String sql = "insert into genres(name, slug, numgames, img) values('"+name+"', '"+slug+"', '"+numGames+"', '"+img+"');";
             //Envia la sentencia sql a la DB
             st.execute(sql);
             st.close();
@@ -46,13 +46,13 @@ public class SQL_CRUD {
             JOptionPane.showMessageDialog(null, "Error al guardar el registro" + e, "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-    public void InsertPlatforms(int id, String name, String slug, int numGames, String img){
+    public void Platforms(String name, String slug, int numGames, String img){
         try{
             //Direct Connect with the DB
             Connection conect = conn.Conect();
             //Objeto que nos permitirá crear sentencias SQL
             java.sql.Statement st = conect.createStatement();
-            String sql = "insert into platforms(id, name, slug, numgames, img) values('"+id+"', '"+name+"', '"+slug+"', '"+numGames+"', '"+img+"')";
+            String sql = "insert into platforms(name, slug, numgames, img) values('"+name+"', '"+slug+"', '"+numGames+"', '"+img+"');";
             //Envia la sentencia sql a la DB
             st.execute(sql);
             st.close();
@@ -61,13 +61,13 @@ public class SQL_CRUD {
             JOptionPane.showMessageDialog(null, "Error al guardar el registro" + e, "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-    public void InsertStores(int id, String name, String domain, int numGames, String img){
+    public void Stores(String name, String domain, int numGames, String img){
         try{
             //Direct Connect with the DB
             Connection conect = conn.Conect();
             //Objeto que nos permitirá crear sentencias SQL
             java.sql.Statement st = conect.createStatement();
-            String sql = "insert into stores(id, name, domain, numgames, img) values('"+id+"', '"+name+"', '"+domain+"', '"+numGames+"', '"+img+"')";
+            String sql = "insert into stores(name, domain, numgames, img) values('"+name+"', '"+domain+"', '"+numGames+"', '"+img+"');";
             //Envia la sentencia sql a la DB
             st.execute(sql);
             st.close();
@@ -76,13 +76,13 @@ public class SQL_CRUD {
             JOptionPane.showMessageDialog(null, "Error al guardar el registro" + e, "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-    public void InsertTags(int id, String name, String slug, int numGames, String img){
+    public void Tags(String name, String slug, int numGames, String img){
         try{
             //Direct Connect with the DB
             Connection conect = conn.Conect();
             //Objeto que nos permitirá crear sentencias SQL
             java.sql.Statement st = conect.createStatement();
-            String sql = "insert into tags(id, name, slug, numgames, img) values('"+id+"', '"+name+"', '"+slug+"', '"+numGames+"', '"+img+"')";
+            String sql = "insert into tags(name, slug, numgames, img) values('"+name+"', '"+slug+"', '"+numGames+"', '"+img+"');";
             //Envia la sentencia sql a la DB
             st.execute(sql);
             st.close();

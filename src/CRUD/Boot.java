@@ -6,6 +6,7 @@ package CRUD;
 
 import SQL.SQLModels;
 import SQL.SQLRelations;
+import WINDOWS.ViewGames;
 
 /**
  *
@@ -14,7 +15,7 @@ import SQL.SQLRelations;
 public class Boot {
     public static void main(String[] args){
         //Create Models
-        SQLModels objModels = new SQLModels();
+        /*SQLModels objModels = new SQLModels();
         objModels.CreateGamesModel();
         objModels.CreateGenresModel();
         objModels.CreatePlatformsModel();
@@ -34,10 +35,12 @@ public class Boot {
         info.InfoGenresToDB();
         info.InfoPlatformsToDB();
         info.InfoStoresToDB();
-        info.InfoTagsToDB();
+        info.InfoTagsToDB();*/
         
-        /*Add windowAdd = new Add();
-        windowAdd.setVisible(true);
-        windowAdd.setLocationRelativeTo(null);*/
+        
+        
+        ViewGames windowGames = new ViewGames();
+        windowGames.setVisible(true);
+        windowGames.setLocationRelativeTo(null);
     }
 }

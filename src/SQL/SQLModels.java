@@ -20,7 +20,7 @@ public class SQLModels {
     public void CreateGamesModel() {
         try {
             Statement st = conect.createStatement();
-            String sql = "CREATE TABLE games(id INT NOT NULL UNIQUE, name TEXT NOT NULL, slug TEXT NOT NULL, img TEXT, rating INT, PRIMARY KEY (id))";
+            String sql = "CREATE TABLE games(id SERIAL, name TEXT NOT NULL, slug TEXT NOT NULL, img TEXT, rating INT, PRIMARY KEY (id));";
             st.execute(sql);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error: ", JOptionPane.ERROR_MESSAGE);
@@ -30,7 +30,7 @@ public class SQLModels {
     public void CreateGenresModel() {
         try {
             Statement st = conect.createStatement();
-            String sql = "CREATE TABLE genres(id INT NOT NULL UNIQUE, name TEXT NOT NULL, slug TEXT NOT NULL, numgames INT NOT NULL, img TEXT, PRIMARY KEY (id))";
+            String sql = "CREATE TABLE genres(id SERIAL, name TEXT NOT NULL, slug TEXT NOT NULL, numgames INT NOT NULL, img TEXT, PRIMARY KEY (id));";
             st.execute(sql);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error: ", JOptionPane.ERROR_MESSAGE);
@@ -40,7 +40,7 @@ public class SQLModels {
     public void CreatePlatformsModel() {
         try {
             Statement st = conect.createStatement();
-            String sql = "CREATE TABLE platforms(id INT NOT NULL UNIQUE, name TEXT NOT NULL, slug TEXT NOT NULL, numgames INT NOT NULL, img TEXT, PRIMARY KEY (id))";
+            String sql = "CREATE TABLE platforms(id SERIAL, name TEXT NOT NULL, slug TEXT NOT NULL, numgames INT NOT NULL, img TEXT, PRIMARY KEY (id));";
             st.execute(sql);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error: ", JOptionPane.ERROR_MESSAGE);
@@ -50,7 +50,7 @@ public class SQLModels {
     public void CreateStoresModel() {
         try {
             Statement st = conect.createStatement();
-            String sql = "CREATE TABLE stores(id INT NOT NULL UNIQUE, name TEXT NOT NULL, domain TEXT NOT NULL, numgames INT NOT NULL, img TEXT, PRIMARY KEY (id))";
+            String sql = "CREATE TABLE stores(id SERIAL, name TEXT NOT NULL, domain TEXT NOT NULL, numgames INT NOT NULL, img TEXT, PRIMARY KEY (id));";
             st.execute(sql);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error: ", JOptionPane.ERROR_MESSAGE);
@@ -60,7 +60,7 @@ public class SQLModels {
     public void CreateTagsModel() {
         try {
             Statement st = conect.createStatement();
-            String sql = "CREATE TABLE tags(id INT NOT NULL UNIQUE, name TEXT NOT NULL, slug TEXT NOT NULL, numgames INT NOT NULL, img TEXT, PRIMARY KEY (id))";
+            String sql = "CREATE TABLE tags(id SERIAL, name TEXT NOT NULL, slug TEXT NOT NULL, numgames INT NOT NULL, img TEXT, PRIMARY KEY (id));";
             st.execute(sql);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error: ", JOptionPane.ERROR_MESSAGE);
